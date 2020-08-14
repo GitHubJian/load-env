@@ -7,12 +7,7 @@ function isObject(value) {
     return Object.prototype.toString.call(value) === '[object Object]'
 }
 
-module.exports = function loadEnv(mode, options) {
-    if (isObject(mode)) {
-        options = mode
-        mode = ''
-    }
-
+function loadEnv(mode, options) {
     const { cwd } = Object.assign({}, { cwd: process.cwd() }, options || {})
 
     const logger = debug('vue:env')
@@ -47,4 +42,18 @@ module.exports = function loadEnv(mode, options) {
             process.env.NODE_ENV = defaultNodeEnv
         }
     }
+}
+
+module.exports = function (mode, options) {
+    if (isObject(mode)) {
+        options = mode
+        mode = ''
+    }
+
+    // load mode .env
+    if (mode) {
+        loadEnv(mode, options)
+    }
+    // load base .env
+    loadEnv('', options)
 }

@@ -1,10 +1,5 @@
 const lib = require('../src')
-const mode = 'development'
-if (mode) {
-    lib('development', { cwd: __dirname })
-}
-
-lib({ cwd: __dirname })
+lib('development', { cwd: __dirname })
 
 Object.prototype.filter = function (re) {
     const that = this

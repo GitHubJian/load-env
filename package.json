@@ -1,17 +1,21 @@
 {
-  "name": "load-env",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "debug": "4.1.1",
-    "dotenv": "8.2.0",
-    "dotenv-expand": "5.1.0"
-  }
+    "name": "load-env",
+    "version": "0.0.1",
+    "description": "环境变量和模式",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/GitHubJian/load-env.git"
+    },
+    "keywords": [],
+    "author": "jian",
+    "license": "ISC",
+    "dependencies": {
+        "debug": "4.1.1",
+        "dotenv": "8.2.0",
+        "dotenv-expand": "5.1.0"
+    }
 }
