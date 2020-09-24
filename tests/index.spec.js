@@ -1,11 +1,12 @@
 const lib = require('../src')
-lib('development', { cwd: __dirname })
+const NODE_ENV = process.env.NODE_ENV || 'development'
+lib(NODE_ENV, {cwd: __dirname})
 
 Object.prototype.filter = function (re) {
     const that = this
 
     return Object.keys(that)
-        .filter((key) => {
+        .filter(key => {
             return re.exec(key)
         })
         .reduce((prev, cur) => {

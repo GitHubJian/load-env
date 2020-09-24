@@ -4,7 +4,7 @@
     "description": "环境变量和模式",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test:install": "rm -rf node_modules package-lock.json && npm install"
     },
     "repository": {
         "type": "git",
@@ -14,7 +14,6 @@
     "author": "jian",
     "license": "ISC",
     "dependencies": {
-        "debug": "4.1.1",
         "dotenv": "8.2.0",
         "dotenv-expand": "5.1.0"
     }

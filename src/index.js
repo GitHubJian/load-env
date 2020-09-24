@@ -1,5 +1,4 @@
 const path = require('path')
-const debug = require('debug')
 const dotenv = require('dotenv')
 const dotenvExpand = require('dotenv-expand')
 
@@ -10,7 +9,6 @@ function isObject(value) {
 function loadEnv(mode, options) {
     const { cwd } = Object.assign({}, { cwd: process.cwd() }, options || {})
 
-    const logger = debug('vue:env')
     const basePath = path.resolve(cwd, `.env${mode ? `.${mode}` : ``}`)
     const localPath = `${basePath}.local`
 
@@ -21,7 +19,6 @@ function loadEnv(mode, options) {
                 debug: process.env.DEBUG,
             })
             dotenvExpand(env)
-            logger(envPath, env)
         } catch (err) {
             if (err.toString().indexOf('ENOENT') < 0) {
                 console.error(err)
