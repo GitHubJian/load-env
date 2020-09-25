@@ -4,7 +4,8 @@
     "description": "环境变量和模式",
     "main": "index.js",
     "scripts": {
-        "test:install": "rm -rf node_modules package-lock.json && npm install"
+        "test:install": "rm -rf node_modules package-lock.json && npm install",
+        "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -s"
     },
     "repository": {
         "type": "git",
@@ -16,5 +17,8 @@
     "dependencies": {
         "dotenv": "8.2.0",
         "dotenv-expand": "5.1.0"
+    },
+    "devDependencies": {
+        "conventional-changelog-cli": "^2.1.0"
     }
 }
