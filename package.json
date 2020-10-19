@@ -5,7 +5,9 @@
     "main": "index.js",
     "scripts": {
         "test:install": "rm -rf node_modules package-lock.json && npm install",
-        "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -s"
+        "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -s",
+        "test:changelog": "tieba-cli-changelog update",
+        "test:reinstall": "rm -rf node_modules package-lock.json && npm install"
     },
     "repository": {
         "type": "git",
@@ -18,7 +20,5 @@
         "dotenv": "8.2.0",
         "dotenv-expand": "5.1.0"
     },
-    "devDependencies": {
-        "conventional-changelog-cli": "^2.1.0"
-    }
+    "devDependencies": {}
 }
